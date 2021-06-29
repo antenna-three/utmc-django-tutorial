@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf=8">
+    <title>参加者リスト</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+  </head>
+  <body>
+    <main>
+      <h1>参加者リスト</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>名前</th>
+            <th>入学年度</th>
+            <th>参加開始日</th>
+            <th>参加終了日</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for entry in entry_list %}
+          <tr>
+            <td>{{ entry.screen_name }}</td>
+            <td>{{ entry.admission_year }}</td>
+            <td>{{ entry.start_date }}</td>
+            <td>{{ entry.end_date }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
+

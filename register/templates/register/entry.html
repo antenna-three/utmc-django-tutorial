@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>参加登録</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+  </head>
+  <body>
+    <main>
+      <h1>参加登録</h1>
+      <form action="{% url 'register:submit' %}" method="post">
+      {% csrf_token %}
+        <label>
+          名前
+          <input name="screen_name" type="text" maxlength="100">
+        </label>
+        <label>
+          入学年度
+          <select name="admission_year">
+          {% for admission_year in admission_years %}
+            <option value={{ admission_year }}>{{ admission_year }}</option>
+          {% endfor %}
+          </select>
+        </label>
+        <label>
+          参加開始日
+          <select name="start_date">
+          {% for entry_date in entry_dates %}
+            <option value={{ entry_date|date:'c' }}>{{ entry_date|date:'n月j日' }}</option>
+          {% endfor %}
+          </select>
+        </label>
+        <label>
+          参加終了日
+          <select name="end_date">
+          {% for entry_date in entry_dates %}
+          <option value={{ entry_date|date:'c' }} {%if forloop.last %}selected{% endif %}>{{ entry_date|date:'n月j日' }}</option>
+          {% endfor %}
+          </select>
+        </label>
+        <button type="submit">登録</button>
+      </form>
+    </main>
+  </body>
+</html
