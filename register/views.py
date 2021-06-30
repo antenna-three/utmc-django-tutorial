@@ -21,12 +21,8 @@ def entry(request):
     return render(request, 'register/entry.html', context)
 
 def submit(request):
-    entry = Entry.objects.create(
-        screen_name=request.POST['screen_name'],
-        admission_year=request.POST['admission_year'],
-        start_date=request.POST['start_date'],
-        end_date=request.POST['end_date'],
-    )
+    fields = ['screen_name', 'admission_year', 'start_date', 'end_date']
+    entry = Entry.objects.create(**{k: request.POST[k] for k in fields})
     return HttpResponseRedirect(reverse('register:results', args=(entry.id,)))
 
 class ListView(generic.ListView):

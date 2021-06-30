@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>UTMC 2021夏合宿</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+<style type="text/css">
+header {
+  background-image: url("https://www.ana.co.jp/www2/travelandlife/article/id000001/000585/images/main_01.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+header h1, header h2 {
+  filter: drop-shadow(0 0 5px #000);
+}
+header a {
+  color: #fff;
+}
+header img {
+  border-radius: 50%;
+}
+</style>
+  </head>
+  <body>
+    <div class="banner">
+      <header>
+        <nav>
+          <image src="http://www.komaba.utmc.or.jp/images/logo/utmc_logo_icon_color.png" width="120" height="120">
+          <ul>
+            <li><a href="{% url 'register:entry' %}">参加登録</a></li>
+            <li><a href="{% url 'register:list' %}">参加者一覧</a></li>
+            <li><a href="/admin/">Admin</a></li>
+          </ul>
+        </nav>
+        <h1>UTMC 2021夏合宿</h1>
+        <h2>今年はハワイに行きます！</h2>
+      </header>
+      <main>
+        <h2>宿泊先</h2>
+        <img src="https://s7d2.scene7.com/is/image/ritzcarlton/50580772-DJI_0035?$SmallViewport100pct$">
+        <p><a href="https://www.ritzcarlton.com/jp/hotels/hawaii/waikiki/hotel-overview">ザ・リッツカールトン・レジデンス ワイキキビーチ</a></p>
+        <p>宿泊費: 80000円/泊</p>
+        <p>チェックイン: 16:00</p>
+        <p>チェックアウト: 12:00</p>
+      </main>
+      <footer>
+        <p>Image from <a href="https://www.ana.co.jp/travelandlife/article/000585/">ANA</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
