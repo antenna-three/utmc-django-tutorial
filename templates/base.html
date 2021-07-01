@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }}{% if title %} | {% endif %}UTMC 2021夏合宿</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <style type="text/css">{% block css %}{% endblock %}</style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="{% url 'index' %}">
+          <image src="http://www.komaba.utmc.or.jp/images/logo/utmc_logo_icon_color.png" width="100" height="100">
+        </a>
+        <ul>
+          <li><a href="{% url 'register:index' %}">参加登録</a></li>
+          <li><a href="{% url 'register:list' %}">参加者一覧</a></li>
+          <li><a href="/admin/">Admin</a></li>
+        </ul>
+      </nav>
+      <h1>UTMC 2021夏合宿</h1>
+      <h2>今年はハワイに行きます！</h2>
+    </header>
+    <main>
+      <h2>{{ title }}</h2>
+      {% block content %}
+      {% endblock %}
+    </main>
+    <footer>
+      <p>Image from <a href="https://www.ana.co.jp/travelandlife/article/000585/">ANA</a></p>
+    </footer>
+  </body>
+</html>

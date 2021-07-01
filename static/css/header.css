@@ -1,0 +1,15 @@
+header {
+  background-image: url("https://www.ana.co.jp/www2/travelandlife/article/id000001/000585/images/main_01.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+header h1, header h2 {
+  filter: drop-shadow(0 0 4px #000);
+}
+header a {
+  color: #fff;
+}
+header img {
+  border-radius: 50%;
+}
